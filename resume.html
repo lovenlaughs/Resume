@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My Resume</title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+<style type="text/css">
+
+* {
+  margin:0;
+  padding:0;
+}
+
+html,
+body {
+  height:100%;
+  min-height:100%;
+}
+
+#scenery {
+  width:500%; /* 100% x length of panel */
+  height:100%;
+  margin-top: 10%;
+  overflow:hidden;
+  display: none;
+}
+
+.panel {
+  width:20%; /* 100% / length of panel */
+  float:left;
+  height:100%;
+}
+
+.panel .inner {padding:2em}
+
+
+/* Details (Ignore this!) */
+body {
+  font:italic normal 13px/1.4 Georgia,Serif;
+  color:#666;
+}
+
+h2 {
+  font-weight:bold;
+  font-size:200%;
+  margin:0 0 1em;
+}
+
+p {margin:1.5em 0}
+
+#text {
+	text-align: right;
+}
+
+#panel-1 {
+  background-color:#add8e6;
+  color:white;
+  -webkit-column-count:4;
+  -moz-column-count:4;
+  column-count:4;
+  -webkit-column-gap:1em;
+  -moz-column-gap:1em;
+  column-gap:1em;
+  text-align:right;
+}
+
+#panel-2 {
+  background-color:#add8e6;
+  color:white;
+  -webkit-column-count:2;
+  -moz-column-count:2;
+  column-count:2;
+  -webkit-column-gap:2em;
+  -moz-column-gap:2em;
+  column-gap:2em;
+}
+
+#panel-3 {
+  background-color:#add8e6;
+  color:white;
+}
+
+#panel-4 {
+  background-color:#add8e6;
+  color:white;
+  -webkit-column-count:2;
+  -moz-column-count:2;
+  column-count:2;
+  -webkit-column-gap:2em;
+  -moz-column-gap:2em;
+  column-gap:2em;
+}
+
+#panel-5 {
+  background-color:#add8e6;
+  color:white;
+  -webkit-column-count:4;
+  -moz-column-count:4;
+  column-count:4;
+  -webkit-column-gap:1em;
+  -moz-column-gap:1em;
+  column-gap:1em;
+}
+#object { 
+  font-weight:bold; 
+  background:yellow; 
+  padding:5px; 
+  width:300px; 
+  position:absolute;
+  left:0px; 
+  top:500px; 
+  display: none;
+}
+
+button {
+   background-color: #ffe1d1;
+  width: 200px;
+    height: 200px;
+  border-radius: 150px;
+    border: 1px solid #ffe1d1;
+  font-family: 'Lobster', cursive;
+    font-size: 30px;
+  margin-left: 42.5%;
+  margin-top: 8%;
+  box-shadow: 0 0 0 0 rgba(#5a99d4, .5);
+   -webkit-animation-name: pulsate;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite
+}
+button:hover {
+    background-color: #ff9d8e;
+}
+@-webkit-keyframes pulsate {
+    0% {
+        width: 200px;
+        height: 200px;
+        opacity: 0.0
+    }
+    10% {
+        width: 200px;
+        height: 200px;
+        opacity: .20
+    }
+    20% {
+        width: 200px;
+        height: 200px; o
+        opacity: .40
+    }
+    30% {
+        width: 200px;
+        height: 200px;
+        opacity: .60
+    }
+    40% {
+        width: 200px;
+        height: 200px;
+        opacity: .80
+    }
+    50% {
+        width: 200px;
+        height: 200px;
+        opacity: 1.0
+    }
+    60% {
+        width: 200px;
+        height: 200px;
+        opacity: .80
+    }
+    70% {
+        width: 200px;
+        height: 200px;
+        opacity: .60
+    }
+    80% {
+        width: 200px;
+        height: 200px;
+        opacity: .40
+    }
+    90% {
+        width: 200px;
+        height: 200px;
+        opacity: .20
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        opacity: 0.0
+    }
+}
+#name {
+    font-family: 'Lobster', cursive;
+    font-size: 84px;
+    color:#add8e6;
+  margin-left: 36%;
+  margin-top: 10%;
+}
+
+#myCanvas {
+	margin-top: -15%;
+	display: none;
+}
+</style>
+</head>
+<body>
+
+ <p id = "name"></p>
+        <button id="presshere">Let's Begin</button>
+<canvas id="myCanvas"></canvas>
+<div id="scenery">
+    <div class="panel" id="panel-1">
+        <div class="inner"><h2>My Journey</h2><p id = "text"> This is a resume. </p></div>
+    </div>
+    <div class="panel" id="panel-2">
+        <div class="inner"><p id = "text"> This is a resume. </p></div>
+    </div>
+    <div class="panel" id="panel-3">
+        <div class="inner"><p id = "text"> This is a resume. </p></div>
+    </div>
+    <div class="panel" id="panel-4">
+        <div class="inner"><p id = "text"> This is a resume. </p></div>
+    </div>
+    <div class="panel" id="panel-5">
+        <div class="inner"><p id = "text"> This is a resume. </p></div>
+    </div>
+</div>
+<div id="object">Placeholder for hot air balloon.</div>
+<script src="http://code.jquery.com/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+        $("#presshere").click(function(){
+            $("#presshere").hide();
+            $("#name").append("Tiffany Brown");
+            $("body").css("background-color", "#fff");
+            $("#name").hide().fadeIn(4000);
+			$("#scenery").hide().fadeIn(4000);
+			$("#object").hide().fadeIn(4000);
+			$("#myCanvas").hide().fadeIn(6000);
+            $("#block1").hide().show();
+            $("#block2").hide().show();
+            $("#block3").hide().show();
+            $("#block4").hide().show();
+            $("#bckgrcolor2").hide().show();
+        });
+    });
+
+
+(function() {
+    function scrollHorizontally(e) {
+        e = window.event || e;
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        document.documentElement.scrollLeft += (delta*40); // Multiplied by 40
+        document.body.scrollLeft += (delta*40); // Multiplied by 40
+        e.preventDefault();
+    }
+    if (window.addEventListener) {
+        // IE9, Chrome, Safari, Opera
+        window.addEventListener("mousewheel", scrollHorizontally, false);
+        // Firefox
+        window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+    } else {
+        // IE 6/7/8
+        window.attachEvent("onmousewheel", scrollHorizontally);
+    }
+})();
+window.onload = function()
+{
+	//adding the event listerner for Mozilla
+    if(window.addEventListener) document.addEventListener('DOMMouseScroll', moveObject, false);
+	//for IE/OPERA etc
+    document.onmousewheel = moveObject;
+	
+}
+
+function moveObject(event)
+{
+    var delta = 0; 
+	if (!event) event = window.event;  
+	 // normalize the delta
+    if (event.wheelDelta)
+	{
+		// IE & Opera
+      	delta = event.wheelDelta / 120;
+	}
+	else if (event.detail) // W3C
+	{
+		delta = -event.detail / 3;
+	}
+   var currPos=document.getElementById('object').offsetLeft;
+   //calculating the next position of the object
+   currPos=parseInt(currPos)+(delta*100);
+   //moving the position of the object 
+   document.getElementById('object').style.marginLeft=currPos+"px";
+}
+
+var c = document.getElementById('myCanvas');
+    
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = "#373741";
+    ctx.font = "24px 'Play', sans-serif";
+    
+    var words = "Web/UX Designer";
+    var count = 0;
+    var pause = 500;
+    var chars;
+    
+    
+    function draw() {
+        
+        count ++;
+        chars = words.substr(0, count);
+        ctx.clearRect(0, 0, c.width, c.height);
+        ctx.fillText(chars, 0, 150);
+        
+        if (count < words.length)
+        setTimeout(draw, pause);
+        
+    }
+
+draw();
+
+</script>
+
+
+
+</body>
+</html>
