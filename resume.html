@@ -20,7 +20,7 @@ body {
 
 #scenery {
   width:500%; /* 100% x length of panel */
-  height:100%;
+  height:45%;
   margin-top: 10%;
   overflow:hidden;
   display: none;
@@ -35,12 +35,6 @@ body {
 .panel .inner {padding:2em}
 
 
-/* Details (Ignore this!) */
-body {
-  font:italic normal 13px/1.4 Georgia,Serif;
-  color:#666;
-}
-
 h2 {
   font-weight:bold;
   font-size:200%;
@@ -50,7 +44,9 @@ h2 {
 p {margin:1.5em 0}
 
 #text {
-	text-align: right;
+	text-align: center;
+	border: 1px solid #f9f9f9;
+	background-color: green;
 }
 
 #panel-1 {
@@ -74,6 +70,7 @@ p {margin:1.5em 0}
   -webkit-column-gap:2em;
   -moz-column-gap:2em;
   column-gap:2em;
+   /*border-radius: 150% 100px 0 0;*/
 }
 
 #panel-3 {
@@ -103,22 +100,19 @@ p {margin:1.5em 0}
   column-gap:1em;
 }
 #object { 
-  font-weight:bold; 
-  background:yellow; 
-  padding:5px; 
-  width:300px; 
   position:absolute;
   left:0px; 
   top:500px; 
+  margin-top: 12%;
   display: none;
 }
 
 button {
-   background-color: #ffe1d1;
+   background-color: #c1adea;
   width: 200px;
     height: 200px;
   border-radius: 150px;
-    border: 1px solid #ffe1d1;
+    border: 1px solid #c1adea;
   font-family: 'Lobster', cursive;
     font-size: 30px;
   margin-left: 42.5%;
@@ -130,7 +124,7 @@ button {
     -webkit-animation-iteration-count: infinite
 }
 button:hover {
-    background-color: #ff9d8e;
+    background-color: #a284e0;
 }
 @-webkit-keyframes pulsate {
     0% {
@@ -194,13 +188,88 @@ button:hover {
     font-size: 84px;
     color:#add8e6;
   margin-left: 36%;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 #myCanvas {
-	margin-top: -15%;
+	margin-top: -55%;
+	margin-left: 43%;
 	display: none;
 }
+#block1 {
+    position: absolute;
+    background-color: #99d100;
+    width:800px;
+    height:70px;
+    margin-top: 18.5%;
+	margin-left: -80%;
+    border-top: 14px solid;
+    border-color:#86b800 transparent transparent transparent;
+    border-radius: 50%/100px 100px 0 0;
+    display: none;
+}
+#block2 {
+    position: absolute;
+    background-color: #99d100;
+    width:800px;
+    height:70px;
+    margin-top: 18.5%;
+	margin-left: -50%;
+    border-top: 14px solid;
+    border-color:#86b800 transparent transparent transparent;
+    border-radius: 50%/100px 100px 0 0;
+    display: none;
+}
+#block3 {
+    position: absolute;
+    background-color: #99d100;
+    width:800px;
+    height:70px;;
+    margin-top: 18.5%;
+	margin-left: -20%;
+    border-top: 14px solid;
+    border-color:#86b800 transparent transparent transparent;
+    border-radius: 150%/100px 100px 0 0;
+    display: none;
+}
+#block4 {
+    position: absolute;
+    background-color: #99d100;
+    width:800px;
+    height:195px;
+    margin-top: 12%;
+	margin-left: 15%;
+    border-top: 14px solid;
+    border-color:#86b800 transparent transparent transparent;
+    border-radius: 150% 100px 0 0;
+    display: none;
+}
+#block5 {
+    position: absolute;
+    background-color: #99d100;
+    width:800px;
+    height:70px;
+    margin-top: 12%;
+	margin-left: 45%;
+    border-top: 14px solid;
+    border-color:#86b800 transparent transparent transparent;
+	border-radius: 150%/100px 100px 0 0;
+    display: none;
+}
+#cloud {
+	width: 350px; height: 120px;
+	
+	background: #f2f9fe;
+	
+	
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	
+	position: relative;
+	margin: 120px auto 20px;
+}
+
 </style>
 </head>
 <body>
@@ -210,13 +279,28 @@ button:hover {
 <canvas id="myCanvas"></canvas>
 <div id="scenery">
     <div class="panel" id="panel-1">
-        <div class="inner"><h2>My Journey</h2><p id = "text"> This is a resume. </p></div>
+        <div class="inner">
+			<!--<h2>My Journey</h2>-->
+			<div id = "cloud"></div>
+			<p id = "text"> My skills include HTML, CSS, JavaScript/Jquery, PHP. Adobe Suite. </p>
+		</div>
+		<div id = "block1"></div>
+		<div id = "block2"></div>
+		<div id = "block3"></div>
+		<div id = "block4"></div>
     </div>
     <div class="panel" id="panel-2">
-        <div class="inner"><p id = "text"> This is a resume. </p></div>
+        <div class="inner">
+			<div id = "cloud"></div>
+			<p id = "text"> This is a resume. </p>
+		</div>
+		<div id = "block5"></div>
     </div>
     <div class="panel" id="panel-3">
-        <div class="inner"><p id = "text"> This is a resume. </p></div>
+        <div class="inner">
+			<div id = "cloud"></div>
+			<p id = "text"> This is a resume. </p>
+		</div>
     </div>
     <div class="panel" id="panel-4">
         <div class="inner"><p id = "text"> This is a resume. </p></div>
@@ -225,7 +309,7 @@ button:hover {
         <div class="inner"><p id = "text"> This is a resume. </p></div>
     </div>
 </div>
-<div id="object">Placeholder for hot air balloon.</div>
+<div id="object"><img src = "https://cdn.pixabay.com/photo/2014/04/03/11/55/hot-air-balloon-312562_960_720.png" alt = "balloon" width = "100" height = "145"></div>
 <script src="http://code.jquery.com/jquery.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -235,19 +319,26 @@ $(document).ready(function(){
         $("#presshere").click(function(){
             $("#presshere").hide();
             $("#name").append("Tiffany Brown");
-            $("body").css("background-color", "#fff");
-            $("#name").hide().fadeIn(4000);
-			$("#scenery").hide().fadeIn(4000);
-			$("#object").hide().fadeIn(4000);
-			$("#myCanvas").hide().fadeIn(6000);
-            $("#block1").hide().show();
-            $("#block2").hide().show();
-            $("#block3").hide().show();
-            $("#block4").hide().show();
+            $("body").css("background-color", "#333");
+            $("#name").hide().fadeIn(2000);
+			$("#scenery").delay(4000).fadeIn(4000);
+			$("#object").delay(4000).fadeIn(4000);
+			$("#myCanvas").delay(2000).fadeIn(2000);
+            $("#block1").delay(4000).fadeIn(4000);
+            $("#block2").delay(4000).fadeIn(4000);
+            $("#block3").delay(4000).fadeIn(4000);
+            $("#block4").delay(4000).fadeIn(4000);
             $("#bckgrcolor2").hide().show();
         });
     });
 
+var thing = $("#object");
+
+$(window).resize(function(){
+	if (thing.width() <= 800){	
+		$(thing).slideUp();
+	}	
+});
 
 (function() {
     function scrollHorizontally(e) {
@@ -292,7 +383,7 @@ function moveObject(event)
 	}
    var currPos=document.getElementById('object').offsetLeft;
    //calculating the next position of the object
-   currPos=parseInt(currPos)+(delta*100);
+   currPos=parseInt(currPos)+(delta*50);
    //moving the position of the object 
    document.getElementById('object').style.marginLeft=currPos+"px";
 }
@@ -300,12 +391,12 @@ function moveObject(event)
 var c = document.getElementById('myCanvas');
     
     var ctx = c.getContext('2d');
-    ctx.fillStyle = "#373741";
+    ctx.fillStyle = "#add8e6";
     ctx.font = "24px 'Play', sans-serif";
     
     var words = "Web/UX Designer";
     var count = 0;
-    var pause = 500;
+    var pause = 600;
     var chars;
     
     
